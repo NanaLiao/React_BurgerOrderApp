@@ -185,6 +185,7 @@ class ContactData extends Component {
 
             <Input 
             key = {formElement.id}
+            element={formElement.id}
             elementType={formElement.config.elementType}
             elementConfig={formElement.config.elementConfig}
             value={formElement.config.value}
@@ -192,7 +193,7 @@ class ContactData extends Component {
             invalid={!formElement.config.valid}
             shouldValidate={formElement.config.validation}
             touched={formElement.config.touched}
-            elementName={formElement.id}
+      
 
             />
           ))}

@@ -8,7 +8,7 @@ const input = (props) => {
     inputClasses.push(styles.Invalid);
     
 //can use switch later
-    if(props.elementName == 'zipcode'){
+    if(props.element == 'zipcode'){
     validationError = <p> Zipcode must be 5 digits!</p>;
   }
   }

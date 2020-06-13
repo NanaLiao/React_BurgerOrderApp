@@ -42,9 +42,6 @@ class BurgerBuilder extends Component {
 
 
   updatePurchaseState(ingredients) {
-    //  const ingredients = {
-    //    ...this.state.ingredients
-    //  };
     const sum = Object.keys(ingredients)
       .map(igKey => {
         return ingredients[igKey]
@@ -53,7 +50,6 @@ class BurgerBuilder extends Component {
     this.setState({ purchasable: sum > 0 });
 
   }
-
 
   addIngredientHandler = (type) => {
     const oldCount = this.state.ingredients[type];
@@ -101,8 +97,6 @@ class BurgerBuilder extends Component {
   }
 
   purchaseContinueHandler = () => {
- 
-
    const queryParams =[];
    for(let i in this.state.ingredients){
     queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
@@ -165,13 +159,10 @@ class BurgerBuilder extends Component {
 
     return (
       <>
-
         <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
           {orderSummary}
         </Modal>
         {burger}
-
-
       </>
     )
   }
