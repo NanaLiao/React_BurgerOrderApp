@@ -9,8 +9,13 @@ const input = (props) => {
     
 //can use switch later
     if(props.element == 'zipcode'){
-    validationError = <p> Zipcode must be 5 digits!</p>;
-  }
+    validationError = <p style={{color:"red"}}> Zipcode must be 5 digits!</p>;
+  } 
+
+  if(props.element == 'password'){
+    validationError = <p style={{color:"red"}}> Password must be at least 6 digits</p>;
+  } 
+
   }
 
   let inputElement = null;
