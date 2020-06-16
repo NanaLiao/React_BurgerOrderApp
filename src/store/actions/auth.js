@@ -25,16 +25,15 @@ export const auth = (email,password,isSignup) =>{
   return dispatch => {
     // authenticate the user
     dispatch(authStart());
-    const apiKey =
-    'AIzaSyCFXWceTlM1jE84K8RsXHtDtUt55GjU99k';
+   
     const authData = {
       email:email,
       password:password,
       returnSecureToken:true
     }
-    let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`;
+    let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCFXWceTlM1jE84K8RsXHtDtUt55GjU99k';
     if(!isSignup){
-      url=`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`;
+      url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCFXWceTlM1jE84K8RsXHtDtUt55GjU99k';
     }
     axios.post(url,authData)
       .then(res=>{
