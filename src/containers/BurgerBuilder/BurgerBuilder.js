@@ -35,6 +35,7 @@ class BurgerBuilder extends Component {
       this.setState({ purchasing: true });
     }else{
       this.props.onSetAuthRedirectPath('/checkout');
+      console.log(this.props.redirectPath)
       this.props.history.push('/auth');
     } 
   }
@@ -99,6 +100,7 @@ const mapStateToProps =state=>{
     price:state.burgerBuilder.totalPrice,
     error:state.burgerBuilder.error,
     isAuthenticated:state.auth.token !== null,
+    redirectPath:state.auth.authRedirectPath
   }
 }
 
